@@ -160,5 +160,7 @@ exec --no-startup-id setxkbmap pl,us -option 'grp:alt_shift_toggle'
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id feh --bg-scale ~/.config/wall.jpg
 exec --no-startup-id compton --xrender-sync-fence
+#MY BINDS
 bindsym $mod+b exec "firefox"
+bindsym $mod+q exec "qutebrowser"
 
