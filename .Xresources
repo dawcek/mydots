@@ -3,7 +3,11 @@ URxvt.scrollBar:	false
 URxvt.cursorColor:	white
 URxvt.font:     xft:bitstream vera sans mono:size=16:antialias=true
 URxvt.boldFont: xft:bitstream vera sans mono:bold:size=16:antialias=true
-
+URxvt.perl-ext-common:	default,matcher,resize-font
+URxvt.url-launcher:	/usr/bin/xdg-open
+URxvt.matcher.button:	1
+URxvt.resize-font.smaller: C-Down
+URxvt.resize-font.bigger: C-Up
 ! special
 *.foreground:   #f8f8f2
 *.background:  [90]#272822
