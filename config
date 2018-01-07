@@ -184,7 +184,7 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 bindsym $mod+Delete mode "$mode_system"
-exec --no-startup-id xautolock -time 15 -locker i3lock &
-for_window [class="gimp"] floating disable
+exec --no-startup-id xautolock -time 15 -locker 'i3lock -c 33334d'  &
+#for_window [class="gimp"] floating disable
 #for_window [window_role="gimp-dock"] floating disable; move left; resize shrink width 50 px or 50ppt
 #for_window [window_role="gimp-toolbox"] floating disable; move right; resize grow width 30 px or 30ppt
