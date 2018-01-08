@@ -1,0 +1,15 @@
+#!/bin/bash
+bc_dir=`pwd`
+echo $bc_dir
+src1="/home/dawid/Dawid"
+src2="/home/dawid/.scripts/"
+key="53B86089968F1B734A63C04C82B500BB2CBD145A"
+
+duplicity \
+	full \
+    --include=${src1} \
+    --include=${src2} \
+    --exclude '**'\
+    --encrypt-key=${key} \
+    --sign-key=${key} \
+    $HOME file://$bc_dir

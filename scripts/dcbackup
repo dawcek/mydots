@@ -1,0 +1,8 @@
+#!/bin/bash
+bc_dir="Backup_`date +%d_%m_%Y_%H-%M`"
+mkdir $bc_dir
+rsync  -avl   ~/Dawid/ ./$bc_dir
+rsync  -avl   ~/bin ./$bc_dir
+7z a "$bc_dir.7z" ./$bc_dir
+rm -fr ./$bc_dir 
+echo "Mission done!"

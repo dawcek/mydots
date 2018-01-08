@@ -1,0 +1,9 @@
+#!/bin/bash
+bc_dir=`pwd`
+dst="$HOME/tmp/restored"
+key="53B86089968F1B734A63C04C82B500BB2CBD145A"
+
+duplicity \
+	--encrypt-key=${key} \
+    --sign-key=${key} \
+	file://${bc_dir} ${dst} 
