@@ -1,3 +1,0 @@
-#!/bin/bash
-scrot /tmp/screen_locked.png
-i3lock -c 33334d -u -e -i  /tmp/screen_locked.png
