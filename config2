@@ -181,6 +181,7 @@ exec --no-startup-id pactl set-sink-volume 0 40%
 exec --no-startup-id xautolock -time 15 -locker 'i3lock -c 33334d'  &
 exec --no-startup-id udiskie -ans &
 exec --no-startup-id dunst &
+exec --no-startup-id low_battery.sh &
 #####################################################################################################
 #Keys:
 bindsym $mod+b exec "firefox"
