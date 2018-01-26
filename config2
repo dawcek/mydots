@@ -177,9 +177,9 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 bindsym $mod+Delete mode "$mode_system"
-exec --no-startup-id xbacklight -set 40
+exec --no-startup-id xbacklight -set 30
 exec --no-startup-id pactl set-sink-volume 0 30%
-exec --no-startup-id xautolock -time 20 -locker 'i3lock -c 33334d'  &
+exec --no-startup-id xautolock -time 25 -locker 'i3lock -c 33334d'  &
 exec --no-startup-id xset s 900 900 
 exec --no-startup-id udiskie -ans &
 exec --no-startup-id dunst &
