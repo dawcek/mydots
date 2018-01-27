@@ -197,10 +197,12 @@ bindsym $mod+Shift+period gaps outer current minus 2
 #screen brightness
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
+bindsym $mod+XF86MonBrightnessUp exec xbacklight -set 30% # decrease screen brightness
 #volume control
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% 
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym $mod+XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 30% 
 #####################################################################################################
 #on/off screen
 bindsym $mod+F10 exec --no-startup-id "vgaon"
