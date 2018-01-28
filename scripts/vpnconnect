@@ -6,7 +6,7 @@ then
     VPNPATH="$VPNPATH$1.nordvpn.com.tcp.ovpn"
     if [ -f $VPNPATH ];
     then
-        openvpn "$VPNPATH" &
+        openvpn "$VPNPATH"
     else
         echo "Selected profile doesn't exitst"
         echo "Please try again"
