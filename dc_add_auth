@@ -1,1 +1,0 @@
-sed -i 's/auth-user-pass/auth-user-pass nord.txt/g' *.ovpn
