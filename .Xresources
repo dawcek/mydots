@@ -13,7 +13,7 @@ URxvt.resize-font.show: C-Right
 
 ! special
 *.foreground:   #f4f4f4
-*.background:   [80]#002b36
+*.background:   #002b36
 *.cursorColor:  #93a1a1
 
 ! black
