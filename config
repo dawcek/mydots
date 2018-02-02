@@ -135,6 +135,7 @@ mode "resize" {
         bindsym k resize grow height 10 px or 10 ppt
         bindsym l resize shrink height 10 px or 10 ppt
         bindsym semicolon resize grow width 10 px or 10 ppt
+
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
         bindsym Down resize grow height 10 px or 10 ppt
@@ -151,24 +152,16 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 
-#!_MOJE_!
-for_window [class="^.*"] border pixel 1
+#My adds:
+for_window [class="^.*"] border pixel 3
 gaps inner 2
-gaps outer 2
-exec --no-startup-id setxkbmap pl,us -option 'grp:alt_shift_toggle'
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec --no-startup-id feh --bg-scale ~/.config/wall.jpg
+gaps outer 4
+#exec --no-startup-id setxkbmap pl,us -option 'grp:alt_shift_toggle'
+exec --no-startup-id setxkbmap pl
+exec --no-startup-id feh --bg-fill ~/.config/wall.jpg
 exec --no-startup-id compton --xrender-sync-fence
 exec --no-startup-id nm-applet
-#MY BINDS
-bindsym $mod+b exec "firefox"
-bindsym $mod+q exec "qutebrowser"
-bindsym $mod+n exec "nm-connection-editor"
-bindsym $mod+Shift+t gaps inner current set 3; gaps outer current set 3
-bindsym $mod+m	gaps inner current plus 2
-bindsym $mod+Shift+m gaps inner current minus 2
-bindsym $mod+z gaps outer current plus 2
-bindsym $mod+Shift+d exec "doublecmd"
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 #power managment
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
@@ -184,7 +177,43 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 bindsym $mod+Delete mode "$mode_system"
-exec --no-startup-id xautolock -time 15 -locker 'i3lock -c 33334d'  &
-#for_window [class="gimp"] floating disable
-#for_window [window_role="gimp-dock"] floating disable; move left; resize shrink width 50 px or 50ppt
-#for_window [window_role="gimp-toolbox"] floating disable; move right; resize grow width 30 px or 30ppt
+exec --no-startup-id xbacklight -set 30
+exec --no-startup-id pactl set-sink-volume 0 30%
+exec --no-startup-id xautolock -time 25 -locker 'i3lock -c 33334d'  &
+exec --no-startup-id xset s 900 900 
+exec --no-startup-id udiskie -ans &
+exec --no-startup-id dunst &
+exec --no-startup-id low_battery.sh &
+#####################################################################################################
+#Keys:
+bindsym $mod+b exec "firefox"
+bindsym $mod+n exec "nm-connection-editor"
+bindsym $mod+m gaps inner current set 2; gaps outer current set 4
+bindsym $mod+Shift+m gaps inner current set 0; gaps outer current set 0
+bindsym $mod+comma  gaps inner current plus 2
+bindsym $mod+Shift+comma gaps inner current minus 2
+bindsym $mod+period gaps outer current plus 2
+bindsym $mod+Shift+period gaps outer current minus 2
+#screen brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease screen brightness
+bindsym $mod+XF86MonBrightnessUp exec xbacklight -set 30% # decrease screen brightness
+#volume control
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% 
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+bindsym $mod+XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 30% 
+#####################################################################################################
+#on/off screen
+bindsym $mod+F10 exec --no-startup-id "vgaon"
+bindsym $mod+F9 exec --no-startup-id "vgaoff"
+bindsym Print 	exec --no-startup-id scrot
+bindsym Shift+Print exec --no-startup-id scrot -s
+# i3-dmenu
+bindsym $mod+Menu exec i3-dmenu-desktop
+# double cmd
+bindsym $mod+Shift+p exec doublecmd
+bindsym $mod+p exec urxvt -e ranger
+bindsym $mod+o exec urxvt -e nvim
+bindsym $mod+i exec urxvt -e htop
+bindsym $mod+Shift+i exec urxvt -e nbwmon
