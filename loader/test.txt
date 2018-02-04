@@ -1,1 +1,1 @@
-
+/etc/pacman.d/hooks/systemd-boot.hook
