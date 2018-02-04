@@ -210,9 +210,9 @@ bindsym $mod+F9 exec --no-startup-id "vgaoff"
 bindsym Print 	exec --no-startup-id scrot
 bindsym Shift+Print exec --no-startup-id scrot -s
 # i3-dmenu
-bindsym $mod+Menu exec i3-dmenu-desktop
+bindsym $mod+Shift+d exec i3-dmenu-desktop
 # double cmd
-bindsym $mod+Shift+p exec doublecmd
+bindsym $mod+Shift+p exec pcmanfm
 bindsym $mod+p exec urxvt -e ranger
 bindsym $mod+o exec urxvt -e nvim
 bindsym $mod+i exec urxvt -e htop
