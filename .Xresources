@@ -12,39 +12,39 @@ URxvt.resize-font.reset: C-Left
 URxvt.resize-font.show: C-Right
 
 ! special
-*.foreground:   #f4f4f4
-*.background:   #002b36
-*.cursorColor:  #93a1a1
+*.foreground:   #f1ebeb
+*.background:   [85]#272822
+*.cursorColor:  #f1ebeb
 
 ! black
-*.color0:       #002b36
-*.color8:       #657b83
+*.color0:       #48483e
+*.color8:       #76715e
 
 ! red
-*.color1:       #dc322f
-*.color9:       #dc322f
+*.color1:       #dc2566
+*.color9:       #fa2772
 
 ! green
-*.color2:       #859900
-*.color10:      #859900
+*.color2:       #8fc029
+*.color10:      #a7e22e
 
 ! yellow
-*.color3:       #b58900
-*.color11:      #b58900
+*.color3:       #d4c96e
+*.color11:      #e7db75
 
 ! blue
-*.color4:       #268bd2
-*.color12:      #268bd2
+*.color4:       #55bcce
+*.color12:      #66d9ee
 
 ! magenta
-*.color5:       #6c71c4
-*.color13:      #6c71c4
+*.color5:       #9358fe
+*.color13:      #ae82ff
 
 ! cyan
-*.color6:       #2aa198
-*.color14:      #2aa198
+*.color6:       #56b7a5
+*.color14:      #66efd5
 
 ! white
-*.color7:       #93a1a1
-*.color15:      #fdf6e3
+*.color7:       #acada1
+*.color15:      #cfd0c2
 

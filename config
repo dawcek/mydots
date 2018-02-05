@@ -151,7 +151,6 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-
 #My adds:
 for_window [class="^.*"] border pixel 3
 gaps inner 2
@@ -186,7 +185,8 @@ exec --no-startup-id dunst &
 exec --no-startup-id low_battery.sh &
 #####################################################################################################
 #Keys:
-bindsym $mod+b exec "firefox"
+bindsym $mod+b exec firefox -p dcmc1
+bindsym $mod+Shift+b exec firefox -p dcmc2
 bindsym $mod+n exec "nm-connection-editor"
 bindsym $mod+m gaps inner current set 2; gaps outer current set 4
 bindsym $mod+Shift+m gaps inner current set 0; gaps outer current set 0
@@ -215,5 +215,6 @@ bindsym $mod+Shift+d exec i3-dmenu-desktop
 bindsym $mod+Shift+p exec pcmanfm
 bindsym $mod+p exec urxvt -e ranger
 bindsym $mod+o exec urxvt -e nvim
+bindsym $mod+Shift+o exec subl
 bindsym $mod+i exec urxvt -e htop
 bindsym $mod+Shift+i exec urxvt -e nbwmon
