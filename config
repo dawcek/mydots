@@ -148,9 +148,7 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
+#
 #My adds:
 for_window [class="^.*"] border pixel 3
 gaps inner 2
@@ -185,7 +183,7 @@ exec --no-startup-id dunst &
 exec --no-startup-id low_battery.sh &
 exec --no-startup-id urxvt -name dropdown -e tmux
 for_window [instance="dropdown"] floating enable
-for_window [instance="dropdown"] resize set 1200 1000
+for_window [instance="dropdown"] resize set 900 700
 for_window [instance="dropdown"] move scratchpad
 for_window [instance="dropdown"] border pixel 5
 #####################################################################################################
@@ -194,9 +192,9 @@ for_window [instance="dropdown"] border pixel 5
 bindsym $mod+Shift+u exec urxvt -name dropdown -e tmux
 bindsym $mod+u [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
 #browser
-#bindsym $mod+b exec firefox -p dcmc1
-#bindsym $mod+Shift+b exec firefox -p dcmc2
-bindsym $mod+b exec firefox
+bindsym $mod+b exec firefox -p dcmc1
+bindsym $mod+Shift+b exec firefox -p dcmc2
+#bindsym $mod+b exec firefox
 #end browsers
 bindsym $mod+n exec "nm-connection-editor"
 bindsym $mod+m gaps inner current set 2; gaps outer current set 4
@@ -228,4 +226,4 @@ bindsym $mod+p exec urxvt -e ranger
 bindsym $mod+o exec urxvt -e nvim
 #bindsym $mod+Shift+o exec secondeditior
 bindsym $mod+i exec urxvt -e htop
-bindsym $mod+Shift+i exec urxvt -e nbwmon
+bindsym $mod+Shift+i exec gnome-system-monitor
