@@ -148,6 +148,7 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+
 #
 #My adds:
 for_window [class="^.*"] border pixel 3
@@ -224,6 +225,7 @@ bindsym $mod+Shift+d exec i3-dmenu-desktop
 bindsym $mod+Shift+p exec pcmanfm
 bindsym $mod+p exec urxvt -e ranger
 bindsym $mod+o exec urxvt -e nvim
-#bindsym $mod+Shift+o exec secondeditior
+#bindsym $mod+Shift+o exec subl
 bindsym $mod+i exec urxvt -e htop
 bindsym $mod+Shift+i exec gnome-system-monitor
+bindsym $mod+y exec gnome-calculator
