@@ -1,0 +1,49 @@
+#!/bin/bash
+VPNPATH="/etc/openvpn/nord"
+cd $VPNPATH
+if [ $# -eq 1 ];
+then
+    VPNPATH="$VPNPATH/ovpn_tcp/"
+    NAME="$VPNPATH$1.nordvpn.com.tcp.ovpn"
+    if [ -f $NAME ];
+    then
+        echo "Wybrany profil: $NAME"
+        openvpn "$NAME"
+    else
+        echo "Selected profile doesn't exitst"
+        echo "Please try again"
+   fi
+elif [ $# -eq 2 ];
+then
+    if [ "$2" == "tcp" ];
+    then
+        VPNPATH="$VPNPATH/ovpn_tcp/"
+        NAME="$VPNPATH$1.nordvpn.com.tcp.ovpn"
+        if [ -f $NAME ];
+        then
+            echo "Wybrany profil: $NAME"
+            openvpn "$NAME"
+        else
+            echo "Selected profile doesn't exitst"
+            echo "Please try again"
+        fi
+    elif [ "$2" == "udp" ];
+    then 
+        VPNPATH="$VPNPATH/ovpn_udp/"
+        NAME="$VPNPATH$1.nordvpn.com.udp.ovpn"
+        if [ -f $NAME ];
+        then
+            echo "Wybrany profil: $NAME"
+            openvpn "$NAME"
+        else
+            echo "Selected profile doesn't exitst"
+            echo "Please try again"
+        fi
+    else
+        echo "Please specify transport protocol"
+        echo "Please try again"
+    fi
+else
+    echo "No servers specified"
+    echo "Please try again"
+fi
