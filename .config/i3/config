@@ -219,15 +219,18 @@ bindsym $mod+XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 3
 #on/off screen
 bindsym $mod+F10 exec --no-startup-id "vgaon"
 bindsym $mod+F9 exec --no-startup-id "vgaoff"
-bindsym Print 	exec --no-startup-id scrot
-bindsym Shift+Print exec --no-startup-id scrot -s
+bindsym Print 			exec --no-startup-id scrot
+bindsym Shift+Print exec --no-startup-id scrot -u
 # i3-dmenu
 bindsym $mod+Shift+d exec i3-dmenu-desktop
-# double cmd
+#file managers:
 bindsym $mod+Shift+p exec pcmanfm
 bindsym $mod+p exec urxvt -e ranger
+#editors:
 bindsym $mod+o exec urxvt -e vim
 #bindsym $mod+Shift+o exec subl
+#system monitors:
+#
 bindsym $mod+i exec urxvt -e htop
 bindsym $mod+Shift+i exec gnome-system-monitor
 bindsym $mod+y exec gnome-calculator
