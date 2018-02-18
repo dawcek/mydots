@@ -234,5 +234,6 @@ bindsym $mod+Shift+o exec subl
 bindsym $mod+i exec urxvt -e htop
 bindsym $mod+Shift+i exec gnome-system-monitor
 bindsym $mod+y exec gnome-calculator
-bindsym $mod+Shift+Return exec st -e zsh
+#bindsym $mod+Shift+Return exec st -e zsh
+bindsym $mod+Shift+Return exec urxvt -e zsh
 bindsym $mod+Shift+a exec pavucontrol
