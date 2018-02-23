@@ -8,7 +8,7 @@ colorscheme onedark
 set encoding=utf-8 " Necessary to show Unicode glyphs
 set t_Co=256
 set laststatus=2
-let g:airline_theme='soda'
+let g:airline_theme='cool'
 " air-line
 let g:airline_powerline_fonts = 1
 
