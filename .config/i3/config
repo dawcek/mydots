@@ -150,7 +150,6 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 #
 #
-#
 #My adds:
 for_window [class="^.*"] border pixel 3
 gaps inner 2
@@ -199,6 +198,7 @@ bindsym $mod+Shift+b exec firefox -p dcmc2
 #bindsym $mod+b exec firefox
 #end browsers
 bindsym $mod+n exec "nm-connection-editor"
+bindsym $mod+Shift+n exec urxvt -e nbwmon
 bindsym $mod+m gaps inner current set 2; gaps outer current set 4
 bindsym $mod+Shift+m gaps inner current set 0; gaps outer current set 0
 bindsym $mod+comma  gaps inner current plus 2
@@ -227,13 +227,13 @@ bindsym $mod+Shift+p exec pcmanfm
 bindsym $mod+p exec urxvt -e ranger
 #editors:
 bindsym $mod+o exec urxvt -e vim
-bindsym $mod+Shift+o exec code
+bindsym $mod+Shift+o exec subl
 #system monitors:
 #
 bindsym $mod+i exec urxvt -e htop
 bindsym $mod+Shift+i exec gnome-system-monitor
 bindsym $mod+y exec gnome-calculator
-bindsym $mod+Shift+y exec "urxvt -e matlab -nodesktop"
+#bindsym $mod+Shift+y exec "urxvt -e matlab -nodesktop"
 #bindsym $mod+Shift+Return exec st -e zsh
 bindsym $mod+Shift+Return exec urxvt -e zsh
 bindsym $mod+Shift+a exec pavucontrol
