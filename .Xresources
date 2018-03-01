@@ -1,8 +1,8 @@
 URxvt.depth:		32
 URxvt.scrollBar:	false
 URxvt.cursorColor:	white
-URxvt.font:     xft:bitstream vera sans mono:size=14:antialias=true,xft:Inconsolata\ for\ Powerline:size=14, xft:xos4 Terminus:pixelsize=14, xft:xos4 Terminess Powerline:pixelsize=14
-URxvt.boldFont: xft:bitstream vera sans mono:bold:size=14:antialias=true, xtf:xos4 Terminus:pixelsize=14:weight=bold, xft:xos4 Terminess Powerline:pixelsize=14
+URxvt.font:     xft:bitstream vera sans mono:size=12:antialias=true,xft:Inconsolata\ for\ Powerline:size=12, xft:xos4 Terminus:pixelsize=12, xft:xos4 Terminess Powerline:pixelsize=12
+URxvt.boldFont: xft:bitstream vera sans mono:bold:size=12:antialias=true, xtf:xos4 Terminus:pixelsize=12:weight=bold, xft:xos4 Terminess Powerline:pixelsize=12
 URxvt.perl-ext-common:	default,matcher,resize-font
 URxvt.url-launcher:	/usr/bin/xdg-open
 URxvt.matcher.button:	1
@@ -13,38 +13,39 @@ URxvt.resize-font.show: C-Right
 
 ! special
 *.foreground:   #f5f5f5
-*.background:   #002b36
-*.cursorColor:  #93a1a1
+*.background:   [90]#272822
+*.cursorColor:  #f8f8f2
 
 ! black
-*.color0:       #002b36
-*.color8:       #657b83
+*.color0:       #272822
+*.color8:       #75715e
 
 ! red
-*.color1:       #dc322f
-*.color9:       #dc322f
+*.color1:       #f92672
+*.color9:       #f92672
 
 ! green
-*.color2:       #859900
-*.color10:      #859900
+*.color2:       #a6e22e
+*.color10:      #a6e22e
 
 ! yellow
-*.color3:       #b58900
-*.color11:      #b58900
+*.color3:       #f4bf75
+*.color11:      #f4bf75
 
 ! blue
-*.color4:       #268bd2
-*.color12:      #268bd2
+*.color4:       #66d9ef
+*.color12:      #66d9ef
 
 ! magenta
-*.color5:       #6c71c4
-*.color13:      #6c71c4
+*.color5:       #ae81ff
+*.color13:      #ae81ff
 
 ! cyan
-*.color6:       #2aa198
-*.color14:      #2aa198
+*.color6:       #a1efe4
+*.color14:      #a1efe4
 
 ! white
-*.color7:       #93a1a1
-*.color15:      #fdf6e3
+*.color7:       #f8f8f2
+*.color15:      #f9f8f5
+
 
