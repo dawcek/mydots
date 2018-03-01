@@ -226,8 +226,8 @@ bindsym $mod+Shift+d exec i3-dmenu-desktop
 bindsym $mod+Shift+p exec pcmanfm
 bindsym $mod+p exec urxvt -e ranger
 #editors:
-bindsym $mod+o exec st -e vim
-#bindsym $mod+Shift+o exec "alternative-editior"
+bindsym $mod+o exec urxvt -e vim
+bindsym $mod+Shift+o exec subl
 #system monitors:
 #
 bindsym $mod+i exec urxvt -e htop
