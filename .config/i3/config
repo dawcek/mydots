@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+font pango:monospace 12
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -261,3 +261,19 @@ bindsym $mod+Shift+minus move scratchpad
 # Show the next scratchpad window or hide the focused scratchpad window.
 # If there are multiple scratchpad windows, this command cycles through them.
 bindsym $mod+minus [instance="^(?!dropdown).*$"] scratchpad show;floating disable
+
+#screen and workspace
+set $firstscreen eDP1
+set $secondscreen VGA1
+#
+workspace 1 output $firstscreen
+workspace 2 output $firstscreen
+workspace 3 output $firstscreen
+workspace 4 output $firstscreen
+workspace 5 output $firstscreen
+workspace 6 output $secondscreen
+workspace 7 output $secondscreen
+workspace 8 output $secondscreen
+workspace 9 output $secondscreen
+workspace 10 output $secondscreen
+
