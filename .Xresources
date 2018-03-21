@@ -3,7 +3,16 @@ URxvt.scrollBar:	false
 URxvt.cursorColor:	white
 URxvt.font:     xft:bitstream vera sans mono:size=12:antialias=true,xft:Inconsolata\ for\ Powerline:size=12, xft:xos4 Terminus:pixelsize=12, xft:xos4 Terminess Powerline:pixelsize=12
 URxvt.boldFont: xft:bitstream vera sans mono:bold:size=12:antialias=true, xtf:xos4 Terminus:pixelsize=12:weight=bold, xft:xos4 Terminess Powerline:pixelsize=12
-URxvt.perl-ext-common:	default,matcher,resize-font
+URxvt.perl-ext-common:	default,matcher,resize-font,clipboard,keyboard-select
+! keyboard-select
+URxvt.keysym.M-s: perl:keyboard-select:activate
+URxvt.keysym.M-r: perl:keyboard-select:search
+! clipboard
+! update clipboard whenever primary gets updated
+URxvt.clipboard.autocopy: true
+URxvt.keysym.M-c: perl:clipboard:copy
+URxvt.keysym.M-v: perl:clipboard:paste
+URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
 URxvt.url-launcher:	/usr/bin/xdg-open
 URxvt.matcher.button:	1
 URxvt.resize-font.smaller: C-Down
@@ -12,40 +21,39 @@ URxvt.resize-font.reset: C-Left
 URxvt.resize-font.show: C-Right
 
 ! special
-*.foreground:   #f5f5f5
-*.background:   [90]#272822
-*.cursorColor:  #f8f8f2
+*.foreground:   #66ff66
+*.background:   [75]#101010
+*.cursorColor:  #66ff66
 
 ! black
-*.color0:       #272822
-*.color8:       #75715e
+*.color0:       #1c1c1c
+*.color8:       #4d4d4d
 
 ! red
-*.color1:       #f92672
-*.color9:       #f92672
+*.color1:       #d81860
+*.color9:       #f00060
 
 ! green
-*.color2:       #a6e22e
-*.color10:      #a6e22e
+*.color2:       #60ff60
+*.color10:      #70ff70
 
 ! yellow
-*.color3:       #f4bf75
-*.color11:      #f4bf75
+*.color3:       #f9fd75
+*.color11:      #f9fd80
 
 ! blue
-*.color4:       #66d9ef
-*.color12:      #66d9ef
+*.color4:       #4695c8
+*.color12:      #5a9dc8
 
 ! magenta
-*.color5:       #ae81ff
-*.color13:      #ae81ff
+*.color5:       #a78edb
+*.color13:      #b29fdb
 
 ! cyan
-*.color6:       #a1efe4
-*.color14:      #a1efe4
+*.color6:       #43afce
+*.color14:      #69b8ce
 
 ! white
-*.color7:       #f8f8f2
-*.color15:      #f9f8f5
-
+*.color7:       #f3ebe2
+*.color15:      #eeeeee
 
