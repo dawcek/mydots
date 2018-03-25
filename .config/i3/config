@@ -252,7 +252,9 @@ bindsym $mod+Shift+i exec gnome-system-monitor
 bindsym $mod+y exec gnome-calculator
 #bindsym $mod+Shift+y exec "urxvt -e matlab -nodesktop"
 #bindsym $mod+Shift+Return exec st -e zsh
-bindsym $mod+Shift+Return exec urxvt -e zsh
+set $var "urxvt -e zsh"
+#bindsym $mod+Shift+Return exec urxvt -e zsh
+bindsym $mod+Shift+Return exec $var
 bindsym $mod+Shift+a exec pavucontrol
 #bindsym $mod+z exec morc_menu
 #hiding window into sratchpad workspace
@@ -278,3 +280,12 @@ workspace 8 output $secondscreen
 workspace 9 output $secondscreen
 workspace 10 output $secondscreen
 
+# next/previous workspace
+
+bindsym Mod1+Tab workspace next
+bindsym Mod1+Shift+Tab workspace prev
+bindsym $mod+Tab workspace back_and_forth
+
+#navigate workspaces next / previous
+bindsym Mod1+Ctrl+Right workspace next
+bindsym Mod1+Ctrl+Left workspace prev
