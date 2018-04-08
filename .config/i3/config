@@ -168,8 +168,8 @@ bindsym $mod+r mode "resize"
 for_window [class="^.*"] border pixel 3
 gaps inner 2
 gaps outer 4
-exec --no-startup-id setxkbmap pl,us -option 'grp:alt_shift_toggle'
-#exec --no-startup-id setxkbmap pl
+#exec --no-startup-id setxkbmap pl,us -option 'grp:alt_shift_toggle'
+exec --no-startup-id setxkbmap pl
 exec --no-startup-id feh --bg-fill ~/.config/wall.jpg
 exec --no-startup-id compton --xrender-sync-fence
 exec --no-startup-id nm-applet
@@ -244,17 +244,17 @@ bindsym $mod+Shift+p exec pcmanfm
 bindsym $mod+p exec urxvt -e ranger
 #editors:
 bindsym $mod+o exec urxvt -e vim
-bindsym $mod+Shift+o exec subl
+#bindsym $mod+Shift+o exec subl
 #system monitors:
 #
 bindsym $mod+i exec urxvt -e htop
-bindsym $mod+Shift+i exec gnome-system-monitor
+#bindsym $mod+Shift+i exec gnome-system-monitor
 bindsym $mod+y exec gnome-calculator
 #bindsym $mod+Shift+y exec "urxvt -e matlab -nodesktop"
 #bindsym $mod+Shift+Return exec st -e zsh
-set $var "urxvt -e zsh"
+#set $var "urxvt -e zsh"
 #bindsym $mod+Shift+Return exec urxvt -e zsh
-bindsym $mod+Shift+Return exec $var
+#bindsym $mod+Shift+Return exec $var
 bindsym $mod+Shift+a exec pavucontrol
 #bindsym $mod+z exec morc_menu
 #hiding window into sratchpad workspace
