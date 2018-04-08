@@ -1,8 +1,9 @@
 URxvt.depth:		32
 URxvt.scrollBar:	false
 URxvt.cursorColor:	white
-URxvt.font:     xft:bitstream vera sans mono:size=12:antialias=true,xft:Inconsolata\ for\ Powerline:size=12, xft:xos4 Terminus:pixelsize=12, xft:xos4 Terminess Powerline:pixelsize=12
-URxvt.boldFont: xft:bitstream vera sans mono:bold:size=12:antialias=true, xtf:xos4 Terminus:pixelsize=12:weight=bold, xft:xos4 Terminess Powerline:pixelsize=12
+URxvt.font:     xft:bitstream vera sans mono:size=14:antialias=true,xft:Inconsolata\ for\ Powerline:size=14, xft:xos4 
+Terminus:pixelsize=14, xft:xos4 Terminess Powerline:pixelsize=14
+URxvt.boldFont: xft:bitstream vera sans mono:bold:size=14:antialias=true, xtf:xos4 Terminus:pixelsize=14:weight=bold, xft:xos4 Terminess Powerline:pixelsize=14
 URxvt.perl-ext-common:	default,matcher,resize-font,clipboard,keyboard-select
 ! keyboard-select
 URxvt.keysym.M-s: perl:keyboard-select:activate
@@ -21,8 +22,8 @@ URxvt.resize-font.reset: C-Left
 URxvt.resize-font.show: C-Right
 
 ! special
-*.foreground:   #66ff66
-*.background:   [75]#101010
+*.foreground:   #f5f5f5
+*.background:   [85]#101010
 *.cursorColor:  #66ff66
 
 ! black
