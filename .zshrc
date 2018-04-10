@@ -3,14 +3,24 @@
 
 # Path to your oh-my-zsh installation.
   export ZSH=/home/dawid/.oh-my-zsh
-
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-neofetch
-
+source ~/.local/share/fonts/*.sh
+POWERLEVEL9K_MODE='awesome-patched'
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status context dir dir_writable vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(time)
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
+POWERLEVEL9K_DIR_WRITABLE_FORBIDDEN_FOREGROUND="white"
+POWERLEVEL9K_STATUS_VERBOSE=false
+POWERLEVEL9K_TIME_BACKGROUND="black"
+POWERLEVEL9K_TIME_FOREGROUND="249"
+POWERLEVEL9K_TIME_FORMAT="%D{%H:%M} \uE12E"
+POWERLEVEL9K_COLOR_SCHEME='light'
+POWERLEVEL9K_VCS_GIT_ICON='\uE1AA'
+POWERLEVEL9K_VCS_GIT_GITHUB_ICON='\uE1AA'
+POWERLEVEL9K_HIDE_BRANCH_ICON=true
 ZSH_THEME="powerlevel9k/powerlevel9k"
-
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
 # cause zsh load theme from this variable instead of
@@ -92,4 +102,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export LC_CTYPE=pl_PL.UTF-8
+
+alias ll="exa -l --git --time-style=long-iso --group-directories-first"
+alias l="exa -la --git --time-style=long-iso --group-directories-first"
+alias la="exa -lahg --git --time-style=long-iso --group-directories-first"
