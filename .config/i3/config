@@ -21,7 +21,7 @@ font pango:monospace 10
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-# The font above is very space-efficient, that is, it looks good, sharp and
+# The font above is very luke smithx xyzspace-efficient, that is, it looks good, sharp and
 # clear in small sizes. However, its unicode glyph coverage is limited, the old
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
@@ -104,7 +104,8 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
-
+set $ws11 "11"
+set $ws21 "21"
 # switch to workspace
 bindsym $mod+1 workspace $ws1
 bindsym $mod+2 workspace $ws2
@@ -116,7 +117,8 @@ bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
-
+bindsym $mod+F1 workspace $ws11
+bindsym Mod1+F1 workspace $ws21
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
@@ -175,23 +177,24 @@ exec --no-startup-id compton --xrender-sync-fence
 exec --no-startup-id nm-applet
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 #power managment
+set $question "Are you sure?"
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id i3exit lock, mode "default"
-    bindsym e exec --no-startup-id i3exit logout, mode "default"
-    bindsym s exec --no-startup-id i3exit suspend, mode "default"
-    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
-    bindsym r exec --no-startup-id i3exit reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
+    bindsym e exec --no-startup-id dcprompt $question "i3exit logout", mode "default"
+    bindsym s exec --no-startup-id dcprompt $question "i3exit suspend", mode "default"
+    bindsym h exec --no-startup-id dcprompt $question "i3exit hibernate", mode "default"
+    bindsym r exec --no-startup-id dcprompt $question "i3exit reboot", mode "default"
+    bindsym Shift+s exec --no-startup-id dcprompt $question "i3exit shutdown", mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym $mod+Delete mode "$mode_system"
+bindsym $mod+Escape mode "$mode_system"
 exec --no-startup-id xbacklight -set 30
 exec --no-startup-id pactl set-sink-volume 0 30%
-exec --no-startup-id xautolock -time 25 -locker 'i3lock -c 33334d'  &
+exec --no-startup-id xautolock -time 25 -locker 'betterlockscreen -l dim'  &
 exec --no-startup-id xset s 900 900 
 exec --no-startup-id udiskie -ans &
 exec --no-startup-id dunst &
@@ -233,10 +236,11 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 bindsym $mod+XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 30% 
 #####################################################################################################
 #on/off screen
-bindsym $mod+F10 exec --no-startup-id "vgaon"
-bindsym $mod+F9 exec --no-startup-id "vgaoff"
-bindsym Print 			exec --no-startup-id scrot
-bindsym Shift+Print exec --no-startup-id scrot -u
+bindsym $mod+F10 exec --no-startup-id "dcdisplay"
+#bindsym $mod+F9 exec --no-startup-id "vgaoff"
+bindsym --release Print exec --no-startup-id scrot -e 'mv $f ~/img/screenshots/'
+bindsym --release Shift+Print exec --no-startup-id scrot -u -e 'mv $f ~/img/screenshots/'
+bindsym --release Control+Print exec --no-startup-id scrot -s -e 'mv $f ~/img/screenshots/'
 # i3-dmenu
 bindsym $mod+Shift+d exec morc_menu
 #file managers:
@@ -244,7 +248,7 @@ bindsym $mod+Shift+p exec pcmanfm
 bindsym $mod+p exec urxvt -e ranger
 #editors:
 bindsym $mod+o exec urxvt -e vim
-#bindsym $mod+Shift+o exec subl
+bindsym $mod+Shift+o exec subl
 #system monitors:
 #
 bindsym $mod+i exec urxvt -e htop
@@ -253,7 +257,7 @@ bindsym $mod+y exec gnome-calculator
 #bindsym $mod+Shift+y exec "urxvt -e matlab -nodesktop"
 #bindsym $mod+Shift+Return exec st -e zsh
 #set $var "urxvt -e zsh"
-#bindsym $mod+Shift+Return exec urxvt -e zsh
+bindsym $mod+Shift+Return exec termite -e zsh
 #bindsym $mod+Shift+Return exec $var
 bindsym $mod+Shift+a exec pavucontrol
 #bindsym $mod+z exec morc_menu
